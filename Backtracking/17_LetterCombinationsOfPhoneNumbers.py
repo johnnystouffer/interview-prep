@@ -13,7 +13,6 @@ Z will make it a little harder.
 
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
-
         def letterRecurse(currStr, i):
             if i == len(digits):
                 if currStr != '':
@@ -26,6 +25,7 @@ class Solution:
                 currStr = currStr[:-1]
         
         allLists = []
+
         hashLetters = {"2": "abc",
          "3": "def",
           "4":"ghi", 
