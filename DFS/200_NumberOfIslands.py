@@ -3,30 +3,40 @@ from typing import List
 """
 200. Number of Islands
 
-We can use DFS when we reach each island.
+Find out how many islands there are in the 
+nested array, to do this we will perform a
+DFS 
 
-O(E + V) because for the worst case is one island is the whole
-graph
+
 """
 
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
-        numberOfIslands = 0
-        for y in range(len(grid)):
-            for x in range(len(grid[0])):
+        n, m = len(grid), len(grid[0])
+        numOfIslands = 0
+
+        # loop over nested array, performing a DFS whenever we hit
+        # an island
+        for y in range(n):
+            for x in range(m):
                 if grid[y][x] == "1":
-                    numberOfIslands +=1 
-                    self.dfs(y, x, grid)
-        return numberOfIslands
-    
-    def dfs(self, y, x, grid):
-        if y >= len(grid) or x >= len(grid[0]) or x < 0 or y < 0 or grid[y][x] == "0":
+                    numOfIslands += 1
+                    self.dfs(x, y, grid)
+        return numOfIslands
+        
+    def dfs(self, x, y, grid):
+        # make sure we are in bounds
+        if y < 0 or y >= len(grid) or x < 0 or x >= len(grid[y]) or grid[y][x] == "0":
             return
+
+        # mark this as found so we don't recurse to
+        # a place we already found
         grid[y][x] = "0"
-        self.dfs(y+1, x, grid)       
-        self.dfs(y, x+1, grid)       
-        self.dfs(y-1, x, grid)       
-        self.dfs(y, x-1, grid)
-        return       
-    
-    
+
+        # dfs on everything next to it
+        self.dfs(x+1, y, grid)
+        self.dfs(x, y+1, grid)
+        self.dfs(x-1, y, grid)
+        self.dfs(x, y-1, grid)
+
+        
