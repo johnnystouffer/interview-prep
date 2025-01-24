@@ -1,0 +1,227 @@
+%-------------------------
+% Resume in Latex
+% Author : John Stouffer
+% Based off of: https://github.com/sb2nov/resume
+% License : None lol
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape John H. Stouffer} \\ \vspace{1pt}
+    \small (248) 860-0499 $|$ \href{mailto:x@x.com}{\underline{stouff17@msu.edu}} $|$ 
+    \href{https://linkedin.com/in/...}{\underline{linkedin.com/in/johnny-stouffer/}} $|$
+    \href{https://github.com/...}{\underline{github.com/johnnystouffer}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Michigan State University}{East Lansing, MI}
+      {B.S. Computer Science $|$ Dean's List 5x $|$ GPA: 3.79}{May 2026}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Intern}{May 2024 - Aug. 2025}
+      {\textbf{Tesla}}{Reno, NV}
+      \resumeItemListStart
+        \resumeItem{Designed and maintained 10+ real-time KPI dashboards in Power BI to monitor the performance of 100+ machines and tools on the manufacturing floor}
+        \resumeItem{Developed and deployed an automated Python-based system for data refreshes and KPI alerts, reducing maintenance planning work by 15 hours per week}
+        \resumeItem{Created and optimized queries/scripts with Python, DAX, and SQL, improving the evaluation of 50+ technicians and engineers across key performance metrics}
+      \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+    \resumeSubheading
+      {ULA / TA (Data Structures and Algorithms)}{Jan. 2025 -- Present}
+      {Michigan State University}{East Lansing, MI}
+      \resumeItemListStart
+        \resumeItem{Providing and leading in helprooms to help students understand complex topics and debug their projects}
+        \resumeItem{Offering online support using Piazza to assist students in understanding concepts outside of
+helproom hours}
+        \resumeItem{Collaborating with other assistants and instructors to develop appropriately rigorous coursework and exams}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{\href{https://devpost.com/software/campusbites}{CampusBites}} $|$ \emph{Django, Python, OpenAI API, React, JS, HTML/CSS, Git}}{Aug. 2024 - Sep. 2024}
+          \resumeItemListStart
+            \resumeItem{Engineered a full-stack web application using React.js, Django, and the OpenAI API within 24 hours}
+            \resumeItem{Leveraged Django to build a RESTful API, managing SQL database operations and JWT-based authentication}
+            \resumeItem{Utilized the OpenAI API to provide tailored deal recommendations for users}
+          \resumeItemListEnd
+          
+      \resumeProjectHeading
+          {\textbf{\href{https://odysseymaps.com}{Odyssey Maps}} $|$ \emph{React, Leaflet, JS, HTML/CSS, Git}}{May 2024 -- Aug 2024}
+          \resumeItemListStart
+            \resumeItem{Developed a responsive front-end in React, integrating Leaflet to provide dynamic, interactive maps}
+            \resumeItem{Implemented a scalable search feature allowing keyword-based discovery of up to 15 maps (3 are currently live)}
+            \resumeItem{Integrating a backend solution to enable user progress tracking}
+          \resumeItemListEnd
+
+        \resumeProjectHeading
+          {\textbf{\href{https://github.com/johnnystouffer/mma-prediction-analysis}{UFC Fight Predictor}} $|$ \emph{PyTorch, BeautifulSoup, Python, Git}}{July 2023 -- Aug 2023}
+          \resumeItemListStart
+            \resumeItem{Extracted comprehensive UFC fight and fighter data since 1993 using BeautifulSoup}
+            \resumeItem{Developed a PyTorch-based neural network in Python, trained on over 7,250 fights}
+            \resumeItem{Achieved a 70\% accuracy rate when predicting upcoming UFC fight outcomes}
+          \resumeItemListEnd
+
+        \resumeProjectHeading
+          {\textbf{\href{https://democratic-index-prediction.onrender.com/}{Democratic Index Dashboard}} $|$ \emph{Plotly Dash, Pandas, NumPy, Python, HTML/CSS}}{May 2023 -- July 2023}
+          \resumeItemListStart
+            \resumeItem{Refined and manipulated OurWorldInData's Democracy dataset spanning 167 countries from 1900 to 2022}
+            \resumeItem{Implemented linear regression to forecast emerging trends up to 2030, highlighting potential political shifts}
+            \resumeItem{Developed interactive dashboard with Plotly Dash with dynamic maps and charts to illustrate global changes}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%-----------SCHOOL EVENTS-----------
+\section{School Activities}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Hackathons: }{MHacks (CampusBites), SpartaHack 8 (Democratic Index Dashboard)} \\
+     \textbf{Spartan Analytics Consulting Group: }{Project Manager and Analyst} \\
+    }}
+ \end{itemize}
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, C/C++, SQL (Postgres, MySQL), JavaScript, HTML/CSS, R} \\
+     \textbf{Frameworks}{: wxWidgets, Qt Creator, React, Node.js, Django, Flask, OpenAI API} \\
+     \textbf{Developer Tools}{: Git, Docker, Google Cloud Platform, Netlify, VS Code, PyCharm, NeoVIM/VIM, Linux/Unix} \\
+     \textbf{Libraries}{: PyTorch, Sci-Kit Learn, Polars, Pandas, NumPy, Matplotlib}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
