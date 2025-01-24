@@ -1,4 +1,5 @@
 import math
+from typing import List
 
 """
 875. Koko Eating Bananas
