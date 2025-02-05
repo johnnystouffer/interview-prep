@@ -1,4 +1,5 @@
 #include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -58,21 +59,28 @@ class BFS {
 public:
     vector<int> rightSideView(TreeNode* root) {
         vector<int> finalNodes;
-        traverse(root, finalNodes, 0);
+        if (!root) { return finalNodes; }
+        
+        queue<TreeNode *> q;
+
+        int level = 0;
+        q.push(root);
+        TreeNode* currNode;
+
+        while (!q.empty()) {
+            level = q.size();
+            for (int i = 0; i < level; i++) {
+                currNode = q.front();
+                q.pop();
+
+                if (i == level-1) {
+                    finalNodes.push_back(currNode->val);
+                }
+
+                if (currNode->left) { q.push(currNode->left); }
+                if (currNode->right) { q.push(currNode->right); }
+            }
+        }
         return finalNodes;
-    }
-
-    void traverse(TreeNode* root, vector<int>& levels, int level) {
-        if (!root) {
-            return;
-        }
-
-        if (levels.size() == level) {
-            levels.push_back(root->val);
-        }
-
-        traverse(root->right, levels, level+1);
-        traverse(root->left, levels, level+1);
-        return;
     }
 };
