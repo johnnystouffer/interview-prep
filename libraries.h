@@ -6,5 +6,6 @@
 #include <cmath>
 #include <string>
 #include <algorithm>
+#include <stack>
 
 #endif
