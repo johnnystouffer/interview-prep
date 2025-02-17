@@ -2,6 +2,14 @@
 
 using namespace std;
 
+/**
+ * 287. Find Duplicate Numbers
+ * 
+ * TODO: The tortoise and hare algorithm
+ * 
+ * Another good one, like it.
+ */
+
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
