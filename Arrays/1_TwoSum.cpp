@@ -44,3 +44,26 @@ public:
         return answer;
     }
 };
+
+/**
+ * Second try
+ */
+
+class Solution {
+    public:
+        vector<int> twoSum(vector<int>& nums, int target) {
+            vector<int> answer;
+            unordered_map<int, int> hashMap;
+    
+            for (int i = 0; i < nums.size(); i++) {
+                int complement = target - nums[i];
+                if (hashMap.find(complement) != hashMap.end()) {
+                    answer.push_back(hashMap[complement]);
+                    answer.push_back(i);
+                    return answer;
+                }
+                hashMap[nums[i]] = i;
+            }
+            return answer;
+        }
+    };
