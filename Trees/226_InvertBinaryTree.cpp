@@ -34,3 +34,7 @@ public:
         return root;
     }
 };
+
+/**
+ * After Attempting this again my solution looked exactly the same, intuitive question.
+ */
