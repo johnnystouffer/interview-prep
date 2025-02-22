@@ -35,7 +35,6 @@ class Solution:
             
             
         directions = [(1,0), (0,1), (-1,0), (0,-1)]
-        visited = set()
         for y in range(len(board)):
             for x in range(len(board[0])):
                 if (x == 0 or x == len(board[0])-1 or y == 0 or y == len(board)-1) and board[y][x] == 'O':
