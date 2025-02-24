@@ -2,6 +2,14 @@
 
 using namespace std;
 
+/**
+ * 242. Valid Anagram
+ * 
+ * For valid anagrams we just want to store the string
+ * in an easy to access way (map) and make sure that it
+ * follows this correctly.
+ */
+
 class Solution {
     public:
         bool isAnagram(string s, string t) {
