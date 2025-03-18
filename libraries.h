@@ -7,5 +7,6 @@
 #include <string>
 #include <algorithm>
 #include <stack>
+#include <numeric>
 
 #endif
