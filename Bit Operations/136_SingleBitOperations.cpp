@@ -25,3 +25,25 @@ public:
         return ans;
     }
 };
+
+
+/**
+ * UPDATE
+ * 
+ * Did this again on 3/17/25 (Happy Birthday Day!)
+ * So here is the "I know C++ a lot better now" version
+ * of this
+ * 
+ * Tadaaaaaa!! Shocker its the same but better syntax and no auto
+ * plus there is a reference! so using significantly less memory! 
+ * WOOO!
+ */
+
+class Solution {
+ public:
+    int singleNumber(vector<int>& nums) {
+        int ans = 0;
+        for (int& num : nums) { ans ^= num; }
+        return ans;
+    }
+};
