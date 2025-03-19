@@ -84,3 +84,71 @@ public:
  * bool param_2 = obj->search(word);
  * bool param_3 = obj->startsWith(prefix);
  */
+
+
+/**
+ * The next try for the trie (heh) invloved this
+ * it was pretty much the exact same lmaoo
+ * but hey slightly more memory efficient
+ */
+
+class TrieNode {
+public:
+    TrieNode* children[26];
+    bool end = false;
+
+    TrieNode() {
+        for (int i = 0; i < 26; ++i) {
+            children[i] = nullptr;
+        }
+    }
+};
+    
+class Trie {
+public:
+    TrieNode* root;
+
+    Trie() {
+        root = new TrieNode();
+    }
+    
+    void insert(string word) {
+        TrieNode* curr = root;
+        for (char& c : word) {
+            int index = c - 'a';
+            if (curr->children[index] == nullptr) {
+                curr->children[index] = new TrieNode();
+            }
+            curr = curr->children[index];
+        }
+        curr->end = true;
+        return;
+    }
+    
+    bool search(string word) {
+        TrieNode* curr = root;
+        for (char& c : word) {
+            int index = c - 'a';
+            curr = curr->children[c - 97];
+            if (curr == nullptr) { return false; }
+        }
+        return curr->end;
+    }
+    
+    bool startsWith(string prefix) {
+        TrieNode* curr = root;
+        for (char& c : prefix) {
+            curr = curr->children[c - 97];
+            if (curr == nullptr) { return false; }
+        }
+        return true;
+    }
+};
+
+/**
+ * Your Trie object will be instantiated and called as such:
+ * Trie* obj = new Trie();
+ * obj->insert(word);
+ * bool param_2 = obj->search(word);
+ * bool param_3 = obj->startsWith(prefix);
+ */
