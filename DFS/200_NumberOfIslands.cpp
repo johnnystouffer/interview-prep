@@ -1,4 +1,4 @@
-#include <vector>
+#include "../libraries.h"
 
 using namespace std;
 
@@ -41,3 +41,57 @@ public:
         return;
     }
 };
+
+/**
+ * This attempt I did both dfs and bfs, but dfs is better... imo? maybe its a fact
+ */
+
+ class Solution {
+    public:
+        vector<vector<int>> directions = {{1,0},{0,1},{-1,0},{0,-1}};
+    
+        int numIslands(vector<vector<char>>& grid) {
+            int numIslands = 0;
+            for (int y = 0; y < grid.size(); ++y) {
+                for (int x = 0; x < grid[0].size(); ++x) {
+                    if (grid[y][x] == '1') {
+                        ++numIslands;
+                        exterminAte(grid, y, x);
+                    }
+                }
+            }
+            return numIslands;
+        }
+    
+        void exterminate(vector<vector<char>>& grid, int y, int x) {
+            if (y < 0 || y >= grid.size() || x < 0 || x >= grid[0].size()) {
+                return;
+            }
+    
+            if (grid[y][x] == '0') { return; }
+            grid[y][x] = '0';
+    
+            for (vector<int>& d : directions) {
+                exterminate(grid, y+d[0], x+d[0]);
+            }  
+            return;
+        }
+    
+        void exterminAte(vector<vector<char>>& grid, int y, int x) {
+            queue<vector<int>> q;
+            q.push({y, x});
+            grid[y][x] = '0';
+    
+            while (!q.empty()) {
+                int cy = q.front()[0], cx = q.front()[1]; q.pop();
+    
+                for (auto& d : directions) {
+                    int ny = cy + d[0], nx = cx + d[1];
+                    if (ny >= 0 && ny < grid.size() && nx >= 0 && nx < grid[0].size() && grid[ny][nx] == '1') { 
+                        grid[ny][nx] = '0';
+                        q.push({ny, nx});
+                    }
+                }
+            }
+        }
+    };
